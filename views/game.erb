@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>MMORPS</title>
+  </head>
+
+  <body>
+    <h2>MMORPS</h2>
+
+    <h3>Player Score</h3>
+      <h5>Human: <%= session[:player_result] %></h5>
+      <h5>Computer: <%= session[:computer_result] %></h5>
+
+      <h3> <%= @game.game_status[-1] %></h3>
+
+    <form action="/new/game" method="post">
+      <input type="submit" id="player" name="player" value = "rock"></input>
+      <input type="submit" id="player" name="player" value = "paper"></input>
+      <input type="submit" id="player" name="player" value = "scissors"></input>
+    </form>
+
+  </body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>MMORPS</title>
+  </head>
+
+  <body>
+    <h2>MMORPS</h2>
+
+    <h3>Player Score</h3>
+      <h5>Human: <%= session[:player_result] %></h5>
+      <h5>Computer: <%= session[:computer_result] %></h5>
+        <ul> <% session[:recent_result].each do |result| %>
+        <li><%=result%></li>
+        <% end %>
+      </ul>
+
+    <form action="/new/game" method="post">
+      <input type="submit" id="player" name="player" value = "rock">
+    </form>
+    <form action="/new/game" method="post">
+      <input type="submit" id="player" name="player" value = "paper">
+    </form>
+    <form action="/new/game" method="post">
+      <input type="submit" id="player" name="player" value = "scissors">
+    </form>
+
+    <a href = '/new'><%=session[:start_over]%></a>
+
+  </body>
+</html>
